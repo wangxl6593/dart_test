@@ -149,6 +149,3 @@ int winner(List<List<int>> board){
   }
   return 0;
 }
-
-
-
