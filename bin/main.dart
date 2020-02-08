@@ -31,7 +31,7 @@ void main() {
           x < board.length &&
           y < board.length) {
         if (board[x][board.length - 1 - y] != 0) {
-          print('In  valid,$flag try again!');
+          print('Invalid,$flag try again!');
           continue;
         }
         if (flag == 1) {
