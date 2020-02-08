@@ -8,9 +8,14 @@ int winner(List<List<int>> board) {
   }
   for (var i = 0; i < num_of_rows; i++) {
     start_points.add([i, 0]);
-    start_points.add([i, num_of_rows-1]);
+    start_points.add([i, num_of_rows - 1]);
   }
-  var directions = [[1, 0], [0, 1], [1, 1], [1, -1]];
+  var directions = [
+    [1, 0],
+    [0, 1],
+    [1, 1],
+    [1, -1]
+  ];
   for (var i in players) {
     for (var j in directions) {
       for (var k in start_points) {
@@ -18,16 +23,20 @@ int winner(List<List<int>> board) {
         if (board[k[0]][k[1]] == i) {
           cnt = 1;
         }
-        for (var l = 1; k[0] + l*j[0] >= 0 && k[0] + l*j[0] < num_of_rows
-          && k[1] + l*j[1] >= 0 && k[1] + l*j[1] < num_of_columns; l++) {
-            if (board[k[0] + l*j[0]][k[1] + l*j[1]] == i){
-              cnt += 1;
-            } else {
-              cnt = 0;
-            }
-            if (cnt == 5) {
-              return i; 
-            }
+        for (var l = 1;
+            k[0] + l * j[0] >= 0 &&
+                k[0] + l * j[0] < num_of_rows &&
+                k[1] + l * j[1] >= 0 &&
+                k[1] + l * j[1] < num_of_columns;
+            l++) {
+          if (board[k[0] + l * j[0]][k[1] + l * j[1]] == i) {
+            cnt += 1;
+          } else {
+            cnt = 0;
+          }
+          if (cnt == 5) {
+            return i;
+          }
         }
       }
     }
