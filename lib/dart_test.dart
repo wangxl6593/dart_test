@@ -27,4 +27,5 @@ void displayBoard(List<List<int>> board) {
   for (var i = 0; i < board[0].length; i++){
     stdout.write(pen('  $i'));
   }
+  stdout.write('\n');
 }
